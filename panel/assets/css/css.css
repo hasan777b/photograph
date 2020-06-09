@@ -1,0 +1,9 @@
+strong{
+    color:red;
+}
+
+.errorAccess{
+    color: red !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+}

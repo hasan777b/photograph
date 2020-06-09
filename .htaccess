@@ -1,0 +1,22 @@
+
+ErrorDocument 400 /photograph/errors/error.php?err=400
+ErrorDocument 401 /photograph/errors/error.php?err=401
+ErrorDocument 403 /photograph/errors/error.php?err=403
+ErrorDocument 404 /photograph/errors/error.php?err=404
+ErrorDocument 405 /photograph/errors/error.php?err=405
+ErrorDocument 408 /photograph/errors/error.php?err=408
+ErrorDocument 414 /photograph/errors/error.php?err=414
+ErrorDocument 500 /photograph/errors/error.php?err=500
+ErrorDocument 502 /photograph/errors/error.php?err=502
+ErrorDocument 504 /photograph/errors/error.php?err=504
+
+<FilesMatch "\.migration\.php|env\.php|Connection.php">
+order allow,deny
+deny from all
+</FilesMatch>
+RewriteEngine On
+RewriteRule ^(.*)\.html$ $1.php
+
+php_value upload_max_filesize 6M
+php_value max_file_uploads 20
+php_value post_max_size 1G
