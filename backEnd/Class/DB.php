@@ -100,6 +100,7 @@ class DB
         }else{
             $fixPage = $page;
         }
+        $fixPage *= 10
         $latest = $latest ? 'ORDER BY `id` DESC' : '';
         $query = $this->con->prepare("SELECT * FROM `{$table}` {$groupBy} {$latest} LIMIT {$fixPage},{$per_page}");
         $query->execute();
